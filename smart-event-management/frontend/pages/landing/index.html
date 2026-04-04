@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planora — Smart Event Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="landing.css" />
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="#" class="nav-logo">
+            <span class="logo-icon">⬡</span>
+            <span class="logo-text">Planora</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How it Works</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="pages/auth/signin.html" class="btn-ghost">Sign In</a>
+            <a href="pages/auth/signup.html" class="btn-primary">Get Started →</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it Works</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+        <a href="pages/auth/signup.html" class="btn-primary">Get Started →</a>
+    </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="hero">
+    <canvas class="starfield" id="starfield"></canvas>
+    <div class="hero-glow"></div>
+    <div class="hero-glow hero-glow--2"></div>
+
+    <div class="hero-content">
+        <div class="badge reveal" style="--delay:0s">
+            <span class="badge-dot"></span> Now with Evenza — AI-powered insights
+        </div>
+        <h1 class="hero-title reveal" style="--delay:0.1s">
+            Smart Event Management<br />
+            <span class="gradient-text">for Modern Teams.</span>
+        </h1>
+        <p class="hero-sub reveal" style="--delay:0.2s">
+            Planora brings organizers, participants, and volunteers together — streamlining every step from creation to feedback.
+        </p>
+        <div class="hero-ctas reveal" style="--delay:0.3s">
+            <a href="pages/auth/signup.html" class="btn-primary btn-lg">Create an Event →</a>
+            <a href="#how-it-works" class="btn-ghost btn-lg">See how it works</a>
+        </div>
+        <div class="hero-stats reveal" style="--delay:0.4s">
+            <div class="stat">
+                <span class="stat-num">10k+</span>
+                <span class="stat-label">Events Managed</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-num">50k+</span>
+                <span class="stat-label">Participants</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <span class="stat-num">98%</span>
+                <span class="stat-label">Satisfaction Rate</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero mockup card -->
+    <div class="hero-mockup reveal" style="--delay:0.5s">
+        <div class="mockup-card">
+            <div class="mockup-header">
+                <div class="mockup-dots">
+                    <span></span><span></span><span></span>
+                </div>
+                <span class="mockup-title">Organizer Dashboard</span>
+            </div>
+            <div class="mockup-body">
+                <div class="mockup-event active">
+                    <div class="event-color" style="background:#7c3aed"></div>
+                    <div class="event-info">
+                        <span class="event-name">Tech Summit 2026</span>
+                        <span class="event-meta">312 registered · Tomorrow</span>
+                    </div>
+                    <div class="event-badge live">Live</div>
+                </div>
+                <div class="mockup-event">
+                    <div class="event-color" style="background:#06b6d4"></div>
+                    <div class="event-info">
+                        <span class="event-name">Design Workshop</span>
+                        <span class="event-meta">48 registered · May 12</span>
+                    </div>
+                    <div class="event-badge upcoming">Soon</div>
+                </div>
+                <div class="mockup-event">
+                    <div class="event-color" style="background:#10b981"></div>
+                    <div class="event-info">
+                        <span class="event-name">Dev Bootcamp</span>
+                        <span class="event-meta">201 registered · Jun 4</span>
+                    </div>
+                    <div class="event-badge upcoming">Soon</div>
+                </div>
+                <div class="mockup-metrics">
+                    <div class="metric">
+                        <span class="metric-val">87%</span>
+                        <span class="metric-key">Attendance</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-val">4.9★</span>
+                        <span class="metric-key">Avg Rating</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-val">24</span>
+                        <span class="metric-key">Volunteers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== TRUSTED BY ========== -->
+<section class="trusted">
+    <p class="trusted-label">Trusted by teams at</p>
+    <div class="logo-strip">
+        <div class="logo-track">
+            <span>Eventify Co.</span>
+            <span>NexaEvents</span>
+            <span>PlanPro</span>
+            <span>GatherHub</span>
+            <span>Convene</span>
+            <span>SummitLabs</span>
+            <span>Eventify Co.</span>
+            <span>NexaEvents</span>
+            <span>PlanPro</span>
+            <span>GatherHub</span>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FEATURES ========== -->
+<section class="features" id="features">
+    <div class="section-container">
+        <div class="section-header">
+            <div class="badge">Our Features</div>
+            <h2 class="section-title">Everything you need to run <br /><span class="gradient-text">flawless events</span></h2>
+            <p class="section-sub">One platform for organizers, participants, and volunteers — from creation to feedback.</p>
+        </div>
+
+        <div class="features-grid">
+
+            <div class="feature-card feature-card--large scroll-reveal">
+                <div class="feature-icon">🗓</div>
+                <h3>Event Creation & Management</h3>
+                <p>Create detailed events with capacity limits, schedules, join codes, and custom fields. Publish in seconds.</p>
+                <div class="feature-tags">
+                    <span>Join Codes</span><span>Capacity Control</span><span>Scheduling</span>
+                </div>
+                <div class="feature-visual">
+                    <div class="mini-card">
+                        <div class="mini-row"><div class="mini-dot purple"></div><span>Tech Summit 2026</span><div class="mini-chip">Open</div></div>
+                        <div class="mini-row"><div class="mini-dot cyan"></div><span>Design Workshop</span><div class="mini-chip">Full</div></div>
+                        <div class="mini-row"><div class="mini-dot green"></div><span>Dev Bootcamp</span><div class="mini-chip">Open</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-card scroll-reveal">
+                <div class="feature-icon">📲</div>
+                <h3>Code-Based Joining</h3>
+                <p>Participants and volunteers join events instantly with a unique code — no lengthy forms.</p>
+                <div class="feature-tags">
+                    <span>Quick Join</span><span>Role Separation</span>
+                </div>
+            </div>
+
+            <div class="feature-card scroll-reveal">
+                <div class="feature-icon">✅</div>
+                <h3>Attendance Tracking</h3>
+                <p>Mark attendance in real-time. Generate reports and export data with a single click.</p>
+                <div class="feature-tags">
+                    <span>Real-Time</span><span>Export Reports</span>
+                </div>
+            </div>
+
+            <div class="feature-card scroll-reveal">
+                <div class="feature-icon">⚡</div>
+                <h3>Live Dashboards</h3>
+                <p>WebSocket-powered dashboards update live — powered by <strong style="color:var(--purple-light)">Evenza</strong>, our AI assistant that surfaces insights as they happen.</p>
+                <div class="feature-tags">
+                    <span>WebSockets</span><span>Live Updates</span>
+                </div>
+            </div>
+
+            <div class="feature-card feature-card--large scroll-reveal">
+                <div class="feature-icon">💬</div>
+                <h3>Feedback & Analytics</h3>
+                <p>Collect structured feedback after every event. View ratings, comments, and trends to improve future events continuously.</p>
+                <div class="feature-tags">
+                    <span>Ratings</span><span>Sentiment</span><span>Trends</span>
+                </div>
+                <div class="feature-visual">
+                    <div class="bar-chart">
+                        <div class="bar-row"><span>Venue</span><div class="bar-wrap"><div class="bar" style="--w:90%"></div></div><span>4.5</span></div>
+                        <div class="bar-row"><span>Content</span><div class="bar-wrap"><div class="bar" style="--w:82%"></div></div><span>4.1</span></div>
+                        <div class="bar-row"><span>Orga.</span><div class="bar-wrap"><div class="bar" style="--w:96%"></div></div><span>4.8</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-card scroll-reveal">
+                <div class="feature-icon">🙋</div>
+                <h3>Volunteer Management</h3>
+                <p>Assign roles, track availability, and coordinate your volunteer team effortlessly.</p>
+                <div class="feature-tags">
+                    <span>Role Assignment</span><span>Coordination</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ========== EVENZA AI ========== -->
+<section class="evenza" id="evenza">
+    <div class="section-container">
+        <div class="evenza-inner scroll-reveal">
+            <div class="evenza-left">
+                <div class="badge">
+                    <span class="badge-dot"></span> Meet Your AI Assistant
+                </div>
+                <h2 class="section-title" style="text-align:left; margin:0;">
+                    Say hello to <span class="gradient-text">Evenza</span>
+                </h2>
+                <p class="section-sub" style="text-align:left; margin:0;">
+                    Evenza is Planora's built-in AI assistant — trained to help organizers make smarter decisions, faster. From predicting attendance drop-offs to suggesting optimal event timings, Evenza works silently in the background so you don't have to.
+                </p>
+                <ul class="evenza-list">
+                    <li>
+                        <div class="evenza-list-icon">🔮</div>
+                        <div>
+                            <strong>Predictive Attendance</strong>
+                            <span>Evenza forecasts no-shows and suggests capacity adjustments before your event starts.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="evenza-list-icon">📊</div>
+                        <div>
+                            <strong>Smart Feedback Summaries</strong>
+                            <span>Get a plain-English summary of all feedback — no sifting through responses manually.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="evenza-list-icon">💡</div>
+                        <div>
+                            <strong>Actionable Suggestions</strong>
+                            <span>After every event, Evenza tells you exactly what to improve next time.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="evenza-right">
+                <div class="evenza-chat">
+                    <div class="chat-header">
+                        <div class="chat-avatar">✦</div>
+                        <div>
+                            <span class="chat-name">Evenza</span>
+                            <span class="chat-status">AI Assistant · Online</span>
+                        </div>
+                    </div>
+                    <div class="chat-messages">
+                        <div class="chat-msg user">
+                            <span>How did the Tech Summit perform overall?</span>
+                        </div>
+                        <div class="chat-msg ai">
+                            <span>Tech Summit 2026 had <strong>87% attendance</strong> (312/358 registered). Feedback averaged <strong>4.9★</strong>. Biggest win: session pacing. One area to improve: registration confirmation emails — 22% opened them after the event started. Want me to draft a better template?</span>
+                        </div>
+                        <div class="chat-msg user">
+                            <span>Yes, and predict turnout for Design Workshop.</span>
+                        </div>
+                        <div class="chat-msg ai typing">
+                            <span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>
+                        </div>
+                    </div>
+                    <div class="chat-input-bar">
+                        <span>Ask Evenza anything about your events…</span>
+                        <div class="chat-send">↑</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== HOW IT WORKS ========== -->
+<section class="how-it-works" id="how-it-works">
+    <div class="section-container">
+        <div class="section-header">
+            <div class="badge">The Process</div>
+            <h2 class="section-title">Up and running in <span class="gradient-text">4 simple steps</span></h2>
+        </div>
+
+        <div class="steps">
+            <div class="step scroll-reveal">
+                <div class="step-num">01</div>
+                <div class="step-content">
+                    <h3>Create Your Account</h3>
+                    <p>Sign up as an organizer, participant, or volunteer. Firebase-backed auth keeps you secure.</p>
+                </div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step scroll-reveal">
+                <div class="step-num">02</div>
+                <div class="step-content">
+                    <h3>Build Your Event</h3>
+                    <p>Set dates, capacity, roles, and publish. Get a shareable join code instantly.</p>
+                </div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step scroll-reveal">
+                <div class="step-num">03</div>
+                <div class="step-content">
+                    <h3>People Join</h3>
+                    <p>Participants and volunteers enter the code to register for their respective roles.</p>
+                </div>
+            </div>
+            <div class="step-line"></div>
+            <div class="step scroll-reveal">
+                <div class="step-num">04</div>
+                <div class="step-content">
+                    <h3>Track & Improve</h3>
+                    <p>Mark attendance live, collect feedback, and view analytics to level up your next event.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== ROLES ========== -->
+<section class="roles">
+    <div class="section-container">
+        <div class="section-header">
+            <div class="badge">Built For Everyone</div>
+            <h2 class="section-title">One platform, <span class="gradient-text">three roles</span></h2>
+        </div>
+        <div class="roles-grid">
+            <div class="role-card scroll-reveal">
+                <div class="role-icon organizer">🎯</div>
+                <h3>Organizer</h3>
+                <p>Create and manage events, oversee registrations, coordinate volunteers, and analyze performance.</p>
+                <ul>
+                    <li>Event creation & editing</li>
+                    <li>Registrations overview</li>
+                    <li>Volunteer coordination</li>
+                    <li>Attendance & feedback reports</li>
+                </ul>
+                <a href="pages/auth/signup.html" class="role-cta">Start Organizing →</a>
+            </div>
+            <div class="role-card role-card--featured scroll-reveal">
+                <div class="role-card-glow"></div>
+                <div class="role-icon participant">🎫</div>
+                <h3>Participant</h3>
+                <p>Discover and join events with a code, track your registrations, and share feedback.</p>
+                <ul>
+                    <li>Code-based quick join</li>
+                    <li>Personal dashboard</li>
+                    <li>Event history</li>
+                    <li>Submit feedback easily</li>
+                </ul>
+                <a href="pages/auth/signup.html" class="role-cta">Join an Event →</a>
+            </div>
+            <div class="role-card scroll-reveal">
+                <div class="role-icon volunteer">🙌</div>
+                <h3>Volunteer</h3>
+                <p>Sign up to help at events, receive assignments, and contribute to memorable experiences.</p>
+                <ul>
+                    <li>Volunteer registration</li>
+                    <li>Task assignments</li>
+                    <li>Schedule visibility</li>
+                    <li>Volunteer dashboard</li>
+                </ul>
+                <a href="pages/auth/signup.html" class="role-cta">Volunteer Now →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="testimonials" id="testimonials">
+    <div class="section-container">
+        <div class="section-header">
+            <div class="badge">Testimonials</div>
+            <h2 class="section-title">Loved by <span class="gradient-text">event teams</span></h2>
+        </div>
+        <div class="testi-grid">
+            <div class="testi-card scroll-reveal">
+                <div class="testi-stars">★★★★★</div>
+                <p>"Planora cut our event setup time in half. The live dashboard alone is worth it — and Evenza's attendance predictions saved us from overbooking twice."</p>
+                <div class="testi-author">
+                    <div class="avatar" style="background:#7c3aed">AK</div>
+                    <div>
+                        <strong>Aryan Kapoor</strong>
+                        <span>Tech Conference Organizer</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card scroll-reveal">
+                <div class="testi-stars">★★★★★</div>
+                <p>"The code-based joining is genius. Our volunteers were onboarded in under 2 minutes with zero confusion about roles."</p>
+                <div class="testi-author">
+                    <div class="avatar" style="background:#06b6d4">PR</div>
+                    <div>
+                        <strong>Priya Ramesh</strong>
+                        <span>Community Event Lead</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card scroll-reveal">
+                <div class="testi-stars">★★★★★</div>
+                <p>"Feedback collection and analytics finally in one place. I used to juggle 3 tools — now it's all Planora, and Evenza summarizes everything for me."</p>
+                <div class="testi-author">
+                    <div class="avatar" style="background:#10b981">SM</div>
+                    <div>
+                        <strong>Sara Mitchell</strong>
+                        <span>University Events Director</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="cta-section">
+    <div class="cta-glow"></div>
+    <div class="section-container">
+        <div class="cta-inner scroll-reveal">
+            <div class="badge">Get Started Free</div>
+            <h2>Ready to manage smarter events?</h2>
+            <p>Join thousands of organizers already using Planora — and let Evenza handle the insights while you focus on the experience.</p>
+            <div class="cta-buttons">
+                <a href="pages/auth/signup.html" class="btn-primary btn-lg">Create Your First Event →</a>
+                <a href="pages/auth/signin.html" class="btn-ghost btn-lg">Sign In</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+    <div class="section-container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo">
+                    <span class="logo-icon">⬡</span>
+                    <span class="logo-text">Planora</span>
+                </a>
+                <p>Smart event management for modern teams. Create, manage, and analyze events — powered by Evenza AI.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Roles</h4>
+                    <a href="#">For Organizers</a>
+                    <a href="#">For Participants</a>
+                    <a href="#">For Volunteers</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Planora. All rights reserved.</span>
+            <span>Built with ♥ for modern event teams</span>
+        </div>
+    </div>
+</footer>
+
+<script src="landing.js"></script>
+</body>
+</html>

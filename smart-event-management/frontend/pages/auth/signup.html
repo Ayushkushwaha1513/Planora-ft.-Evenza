@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account — Planora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+
+<!-- Background effects -->
+<canvas class="starfield" id="starfield"></canvas>
+<div class="bg-glow bg-glow--1"></div>
+<div class="bg-glow bg-glow--2"></div>
+
+<div class="auth-layout">
+
+    <!-- ===== LEFT PANEL ===== -->
+    <div class="auth-panel auth-panel--left">
+        <a href="../../index.html" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Back to Planora
+        </a>
+
+        <div class="auth-brand">
+            <div class="brand-logo">
+                <span class="logo-hex">⬡</span>
+                <span class="logo-name">Planora</span>
+            </div>
+            <div class="evenza-chip">
+                <span class="evenza-dot"></span>
+                Evenza AI included
+            </div>
+        </div>
+
+        <div class="auth-hero-text">
+            <h1>Start for<br /><span class="gradient-text">free.</span></h1>
+            <p>Join Planora and run your first event in minutes — with Evenza AI already built in.</p>
+        </div>
+
+        <!-- Testimonial snippet -->
+        <div class="auth-quote">
+            <div class="quote-stars">★★★★★</div>
+            <p>"Planora + Evenza completely changed how we run campus events. Setup was under 5 minutes."</p>
+            <div class="quote-author">
+                <div class="quote-avatar" style="background:#7c3aed">AK</div>
+                <div>
+                    <strong>Aryan Kapoor</strong>
+                    <span>Tech Conference Organizer</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats row -->
+        <div class="auth-stats">
+            <div class="auth-stat">
+                <span class="as-num">10k+</span>
+                <span class="as-label">Events</span>
+            </div>
+            <div class="as-divider"></div>
+            <div class="auth-stat">
+                <span class="as-num">50k+</span>
+                <span class="as-label">Users</span>
+            </div>
+            <div class="as-divider"></div>
+            <div class="auth-stat">
+                <span class="as-num">Free</span>
+                <span class="as-label">To start</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== RIGHT PANEL (FORM) ===== -->
+    <div class="auth-panel auth-panel--right">
+        <div class="form-card" id="formCard">
+
+            <div class="form-header">
+                <h2>Create your account</h2>
+                <p>Already have an account? <a href="signin.html" class="form-link">Sign in →</a></p>
+            </div>
+
+            <!-- Google OAuth -->
+            <button class="btn-oauth" id="googleBtn" type="button">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/>
+                    <path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z" fill="#34A853"/>
+                    <path d="M3.964 10.71c-.18-.54-.282-1.117-.282-1.71s.102-1.17.282-1.71V4.958H.957C.347 6.173 0 7.548 0 9s.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/>
+                    <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.958L3.964 6.29C4.672 4.163 6.656 3.58 9 3.58z" fill="#EA4335"/>
+                </svg>
+                Continue with Google
+            </button>
+
+            <div class="divider"><span>or sign up with email</span></div>
+
+            <!-- Sign Up Form -->
+            <form class="auth-form" id="signupForm" novalidate>
+
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="firstName">First name</label>
+                        <div class="input-wrap">
+                            <svg class="input-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5" r="3" stroke="currentColor" stroke-width="1.2"/><path d="M2 14c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                            <input type="text" id="firstName" name="firstName" placeholder="John" autocomplete="given-name" required />
+                        </div>
+                        <span class="field-error" id="firstNameError"></span>
+                    </div>
+                    <div class="field-group">
+                        <label for="lastName">Last name</label>
+                        <div class="input-wrap">
+                            <svg class="input-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5" r="3" stroke="currentColor" stroke-width="1.2"/><path d="M2 14c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                            <input type="text" id="lastName" name="lastName" placeholder="Doe" autocomplete="family-name" required />
+                        </div>
+                        <span class="field-error" id="lastNameError"></span>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label for="email">Email address</label>
+                    <div class="input-wrap">
+                        <svg class="input-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12v8H2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M2 4l6 5 6-5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+                    </div>
+                    <span class="field-error" id="emailError"></span>
+                </div>
+
+                <div class="field-group">
+                    <label for="role">I am joining as</label>
+                    <div class="role-selector" id="roleSelector">
+                        <button type="button" class="role-btn active" data-role="organizer">
+                            <span class="role-btn-icon">🎯</span>
+                            <span class="role-btn-label">Organizer</span>
+                        </button>
+                        <button type="button" class="role-btn" data-role="participant">
+                            <span class="role-btn-icon">🎫</span>
+                            <span class="role-btn-label">Participant</span>
+                        </button>
+                        <button type="button" class="role-btn" data-role="volunteer">
+                            <span class="role-btn-icon">🙌</span>
+                            <span class="role-btn-label">Volunteer</span>
+                        </button>
+                    </div>
+                    <input type="hidden" id="role" name="role" value="organizer" />
+                </div>
+
+                <div class="field-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrap">
+                        <svg class="input-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M5 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                        <input type="password" id="password" name="password" placeholder="Min. 8 characters" autocomplete="new-password" required />
+                        <button type="button" class="toggle-pw" id="togglePw" aria-label="Show password">
+                            <svg class="eye-show" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 8s2.5-5 7-5 7 5 7 5-2.5 5-7 5-7-5-7-5z" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.2"/></svg>
+                            <svg class="eye-hide" width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:none"><path d="M2 2l12 12M6.5 6.5A2 2 0 0010 10M4 4.5C2.5 5.8 1 8 1 8s2.5 5 7 5c1.3 0 2.5-.4 3.5-1M7 3.1C7.3 3 7.7 3 8 3c4.5 0 7 5 7 5s-.7 1.4-2 2.7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                        </button>
+                    </div>
+                    <!-- Password strength bar -->
+                    <div class="pw-strength" id="pwStrength">
+                        <div class="pw-strength-bar">
+                            <div class="pw-strength-fill" id="pwFill"></div>
+                        </div>
+                        <span class="pw-strength-label" id="pwLabel">Too short</span>
+                    </div>
+                    <span class="field-error" id="passwordError"></span>
+                </div>
+
+                <div class="field-group">
+                    <label for="confirmPassword">Confirm password</label>
+                    <div class="input-wrap">
+                        <svg class="input-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M5 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repeat your password" autocomplete="new-password" required />
+                    </div>
+                    <span class="field-error" id="confirmPasswordError"></span>
+                </div>
+
+                <div class="field-group field-group--row">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required />
+                        <span class="checkbox-custom"></span>
+                        <span>I agree to Planora's <a href="#" class="form-link">Terms</a> and <a href="#" class="form-link">Privacy Policy</a></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">
+                    <span class="btn-text">Create Account</span>
+                    <span class="btn-loader" aria-hidden="true"></span>
+                </button>
+
+                <div class="form-message" id="formMessage"></div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="auth.js"></script>
+</body>
+</html>
