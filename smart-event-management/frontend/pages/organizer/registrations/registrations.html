@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrations — Planora</title>
+    <meta name="description" content="View and manage all event registrations. Track participant sign-ups, export data, and monitor trends with Planora." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../component/sidebar/sidebar.css" />
+    <link rel="stylesheet" href="../../component/navbar/navbar.css" />
+    <link rel="stylesheet" href="registration.css" />
+</head>
+<body>
+
+<!-- Background -->
+<canvas id="starfield"></canvas>
+<div class="ambient-orb orb-1"></div>
+<div class="ambient-orb orb-2"></div>
+
+<!-- Sidebar injected by JS -->
+
+<!-- ========== MAIN CONTENT ========== -->
+<main class="main-content" id="mainContent">
+
+    <!-- Topbar -->
+    <header class="topbar" id="topbar">
+        <div class="topbar-left">
+            <button class="menu-toggle" id="menuToggle" aria-label="Open sidebar">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+            <div class="topbar-search">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" stroke-width="1.3"/><path d="M10 10l3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+                <input type="text" id="searchInput" placeholder="Search participants…" autocomplete="off" />
+            </div>
+        </div>
+        <div class="topbar-right">
+            <div class="event-selector-wrap">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <select class="event-selector" id="eventSelector">
+                    <option value="all">All Events</option>
+                    <option value="1">Tech Summit 2026</option>
+                    <option value="2">Design Workshop</option>
+                    <option value="3">Dev Bootcamp</option>
+                    <option value="4">Startup Pitch Night</option>
+                    <option value="5">AI & Future of Work</option>
+                </select>
+            </div>
+            <button class="btn-export" id="exportBtn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Export CSV
+            </button>
+            <button class="topbar-btn" id="notifBtn" aria-label="Notifications">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2a6 6 0 016 6v3l1.5 2.5H1.5L3 11V8a6 6 0 016-6z" stroke="currentColor" stroke-width="1.3"/><path d="M7 14.5a2 2 0 004 0" stroke="currentColor" stroke-width="1.3"/></svg>
+                <span class="topbar-badge">5</span>
+            </button>
+            <div class="topbar-avatar" id="topbarAvatar">AK</div>
+        </div>
+    </header>
+
+    <div class="page-body">
+
+        <!-- Page Header -->
+        <section class="page-hero">
+            <div class="page-hero-text">
+                <div class="page-badge">
+                    <span class="badge-dot"></span>
+                    Registration Management
+                </div>
+                <h1 class="page-title">Event <span class="gradient-text">Registrations</span></h1>
+                <p class="page-subtitle">Track sign-ups, manage participants, and monitor registration trends across your events.</p>
+            </div>
+        </section>
+
+        <!-- Stats Row -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon" style="--icon-c:#7c3aed;--icon-bg:rgba(124,58,237,0.12)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value" data-target="1248">0</span>
+                    <span class="stat-label">Total Registrations</span>
+                </div>
+                <div class="stat-trend up">↑ +84 this week</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="--icon-c:#10b981;--icon-bg:rgba(16,185,129,0.12)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value" data-target="847">0</span>
+                    <span class="stat-label">Confirmed</span>
+                </div>
+                <div class="stat-trend up">68% confirmed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="--icon-c:#f59e0b;--icon-bg:rgba(245,158,11,0.12)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value" data-target="312">0</span>
+                    <span class="stat-label">Pending</span>
+                </div>
+                <div class="stat-trend neutral">Awaiting confirmation</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="--icon-c:#06b6d4;--icon-bg:rgba(6,182,212,0.12)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-value" data-target="5">0</span>
+                    <span class="stat-label">Active Events</span>
+                </div>
+                <div class="stat-trend up">All accepting registrations</div>
+            </div>
+        </section>
+
+        <!-- Registration Trend Chart -->
+        <section class="chart-section">
+            <div class="chart-header">
+                <div class="chart-title">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    Registration Trend
+                </div>
+                <div class="chart-tabs">
+                    <button class="chart-tab active" data-range="7d">7D</button>
+                    <button class="chart-tab" data-range="30d">30D</button>
+                    <button class="chart-tab" data-range="all">All</button>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="regChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Filter Tabs + Controls -->
+        <div class="controls-row">
+            <div class="filter-tabs" id="filterTabs">
+                <button class="filter-tab active" data-filter="all">All <span class="tab-count">1248</span></button>
+                <button class="filter-tab" data-filter="confirmed">Confirmed <span class="tab-count">847</span></button>
+                <button class="filter-tab" data-filter="pending">Pending <span class="tab-count">312</span></button>
+                <button class="filter-tab" data-filter="cancelled">Cancelled <span class="tab-count">89</span></button>
+            </div>
+        </div>
+
+        <!-- Registrations Table -->
+        <div class="reg-table-container" id="tableView">
+            <table class="reg-table">
+                <thead>
+                    <tr>
+                        <th class="th-check">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="selectAll" />
+                                <span class="checkmark"></span>
+                            </label>
+                        </th>
+                        <th>Participant</th>
+                        <th>Event</th>
+                        <th>Registered</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="regTableBody">
+                    <!-- Injected by JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="pagination">
+            <span class="pagination-info" id="paginationInfo">Showing 1–15 of 1248</span>
+            <div class="pagination-btns">
+                <button class="pg-btn" id="prevBtn" disabled>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="pg-numbers" id="pgNumbers"></div>
+                <button class="pg-btn" id="nextBtn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Evenza AI Insights -->
+        <div class="evenza-panel">
+            <div class="evenza-header">
+                <div class="evenza-badge-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                    Evenza AI
+                </div>
+                <h3 class="evenza-title">Registration Insights</h3>
+            </div>
+            <div class="evenza-insights">
+                <div class="insight-item">
+                    <div class="insight-icon">📈</div>
+                    <p><strong>Tech Summit 2026</strong> registrations are up <span class="highlight">34% vs last week</span>. At this pace, it will hit capacity in 5 days.</p>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-icon">⚠️</div>
+                    <p><strong>Design Workshop</strong> has <span class="highlight">12 pending confirmations</span> that haven't responded in 48+ hours. Consider sending a reminder.</p>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-icon">💡</div>
+                    <p>Most registrations happen between <span class="highlight">6–9 PM</span>. Schedule social media promotions accordingly for better reach.</p>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /page-body -->
+</main>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../../component/sidebar/sidebar.js"></script>
+<script src="registration.js"></script>
+</body>
+</html>
