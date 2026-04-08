@@ -1,0 +1,56 @@
+/* Volunteer Messages — page styles */
+
+.msg-item{
+  display:flex;
+  gap:10px;
+  padding:12px 14px;
+  border-bottom:1px solid var(--border);
+  transition: background var(--transition);
+}
+.msg-item:last-child{ border-bottom:none; }
+.msg-item:hover{ background: rgba(255,255,255,0.02); }
+.msg-item.unread{ background: rgba(124,58,237,0.04); }
+
+.m-dot{
+  width:8px;height:8px;border-radius:50%;
+  margin-top:6px;flex-shrink:0;
+}
+
+.m-body{ flex:1; min-width:0; }
+.m-title{
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 900;
+  color: var(--text);
+}
+.m-sub{
+  margin-top:3px;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.m-meta{
+  margin-top:6px;
+  font-size: 10.5px;
+  color: var(--text-dim);
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.m-chip{
+  font-family: var(--font-display);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  padding:3px 8px;
+  border-radius: var(--radius-pill);
+  border:1px solid var(--border);
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.02);
+  white-space:nowrap;
+}
+.m-chip.urgent{ border-color: rgba(239,68,68,0.25); color:#f87171; background: rgba(239,68,68,0.08); }
+.m-chip.info{ border-color: rgba(6,182,212,0.25); color: var(--cyan); background: rgba(6,182,212,0.08); }
+

@@ -1,0 +1,36 @@
+/* Participant My Events — page styles */
+
+.action-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:var(--font-display);
+  font-size:11px;
+  font-weight:700;
+  padding:6px 10px;
+  border-radius:var(--radius-pill);
+  border:1px solid var(--border);
+  color:var(--text-muted);
+  background:rgba(255,255,255,0.02);
+  transition:var(--transition);
+  cursor:pointer;
+}
+.action-pill:hover{
+  border-color:var(--border-hover);
+  color:var(--text);
+}
+.action-pill.primary{
+  border-color:rgba(124,58,237,0.35);
+  background:rgba(124,58,237,0.12);
+  color:var(--purple-light);
+}
+.action-pill.primary:hover{
+  border-color:rgba(124,58,237,0.55);
+}
+
+.card-actions-row{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+

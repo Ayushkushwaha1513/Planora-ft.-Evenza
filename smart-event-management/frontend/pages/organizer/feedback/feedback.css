@@ -1,0 +1,50 @@
+/* Organizer Feedback — page styles */
+
+.feedback-item{
+  border:1px solid var(--border);
+  background: rgba(255,255,255,0.01);
+  border-radius: var(--radius);
+  padding:14px 14px;
+  display:flex;
+  gap:12px;
+}
+
+.fb-dot{
+  width:10px;height:10px;border-radius:50%;
+  margin-top:4px;flex-shrink:0;
+}
+
+.fb-body{ flex:1; min-width:0; }
+.fb-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+.fb-name{
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--text);
+}
+.fb-meta{
+  margin-top:2px;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.fb-comment{
+  margin-top:10px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.fb-stars{
+  display:flex;
+  gap:2px;
+  flex-shrink:0;
+}
+.fb-stars span{ font-size:12px; color: var(--text-dim); }
+.fb-stars span.filled{ color: var(--amber); }
+
