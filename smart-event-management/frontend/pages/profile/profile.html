@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile — Planora</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../shared/dashboard.css" />
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-top">
+    <a href="../home/home.html" class="sidebar-logo"><span class="logo-hex">⬡</span><span class="logo-name">Planora</span></a>
+    <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 4l10 10M14 4L4 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section-label">Main</div>
+    <a href="../home/home.html" class="nav-item"><svg class="nav-icon" viewBox="0 0 20 20" fill="none"><path d="M3 9.5L10 3l7 6.5V17a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18V12h6v6" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>Home</span></a>
+    <a href="../add-event/add-event.html" class="nav-item"><svg class="nav-icon" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M3 8h14M7 2v4M13 2v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M10 11v4M8 13h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span>Add Event</span></a>
+    <a href="../join-event/join-event.html" class="nav-item"><svg class="nav-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M10 7v6M7 10h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span>Join Event</span></a>
+
+    <div class="nav-section-label">Account</div>
+    <a href="profile.html" class="nav-item active"><svg class="nav-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="4" stroke="currentColor" stroke-width="1.4"/><path d="M3 18c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span>Profile</span></a>
+    <a href="../settings/settings.html" class="nav-item"><svg class="nav-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M10 2.5v2M10 15.5v2M2.5 10h2M15.5 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg><span>Settings</span></a>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="evenza-badge"><div class="evenza-icon">✦</div><div class="evenza-info"><span class="evenza-name">Evenza AI</span><span class="evenza-status">Active</span></div><div class="evenza-ping"></div></div>
+    <div class="sidebar-user"><div class="user-avatar">RK</div><div class="user-info"><span class="user-name">Rishabh Kumar</span><span class="user-role">Organizer</span></div><button class="user-logout" id="logoutBtn" title="Sign out"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 2H3a1 1 0 00-1 1v10a1 1 0 001 1h3M10 11l3-3-3-3M13 8H6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+  </div>
+</aside>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<main class="main-content">
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open sidebar"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <div class="topbar-breadcrumb">
+        <a href="../home/home.html">Home</a>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        <span>Profile</span>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <div class="topbar-date" id="topbarDate"></div>
+      <div class="topbar-avatar">RK</div>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">My Profile</h1>
+        <p class="page-sub">Account details, role, and a quick summary of your recent activity.</p>
+      </div>
+      <div class="page-actions">
+        <button class="btn-ghost" id="editBtn">Edit</button>
+        <button class="btn-primary" id="saveBtn" style="display:none">Save</button>
+      </div>
+    </div>
+
+    <div class="profile-grid">
+      <div class="section">
+        <div class="section-head"><span class="section-title">Account</span></div>
+        <div class="profile-card">
+          <div class="profile-hero">
+            <div class="p-avatar">RK</div>
+            <div class="p-hero-body">
+              <div class="p-name" id="pNameDisplay">Rishabh Kumar</div>
+              <div class="p-meta"><span id="pEmailDisplay">rishabh@planora.app</span> · <span class="badge badge-approved" id="pRoleDisplay">Organizer</span></div>
+            </div>
+          </div>
+
+          <div class="p-form">
+            <div class="field-group">
+              <label>Full name</label>
+              <div class="input-wrap"><input id="nameInput" type="text" value="Rishabh Kumar" disabled /></div>
+            </div>
+            <div class="field-group">
+              <label>Email</label>
+              <div class="input-wrap"><input id="emailInput" type="email" value="rishabh@planora.app" disabled /></div>
+            </div>
+            <div class="field-group">
+              <label>Role</label>
+              <div class="input-wrap">
+                <select id="roleInput" disabled>
+                  <option value="Organizer" selected>Organizer</option>
+                  <option value="Participant">Participant</option>
+                  <option value="Volunteer">Volunteer</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-head"><span class="section-title">Recent Activity</span></div>
+        <div class="activity" id="activity"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="../../shared/js/ui.js"></script>
+<script src="profile.js"></script>
+</body>
+</html>
