@@ -1,11 +1,13 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
+const { ROLES } = require("../config/constants");
 
 const generateToken = (user) => {
     return jwt.sign(
         {
             userId: user._id,
-            email: user.email
+            email: user.email,
+            roles: user.roles || []
         },
         process.env.JWT_SECRET,
         {
@@ -26,7 +28,8 @@ const signup = async ({ fullName, email, password }) => {
     const user = await User.create({
         fullName,
         email,
-        password
+        password,
+        roles: [ROLES.PARTICIPANT]
     });
 
     const token = generateToken(user);
@@ -35,7 +38,8 @@ const signup = async ({ fullName, email, password }) => {
         user: {
             id: user._id,
             fullName: user.fullName,
-            email: user.email
+            email: user.email,
+            roles: user.roles
         },
         token
     };
@@ -64,7 +68,8 @@ const signin = async ({ email, password }) => {
         user: {
             id: user._id,
             fullName: user.fullName,
-            email: user.email
+            email: user.email,
+            roles: user.roles
         },
         token
     };
