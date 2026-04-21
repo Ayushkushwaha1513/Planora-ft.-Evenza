@@ -1,113 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Profile — Planora</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../shared/dashboard.css" />
-  <link rel="stylesheet" href="profile.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rishabh Kumar — Planora</title>
+  <link rel="stylesheet" href="profile.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
 
+<!-- PARTICLE CANVAS -->
+<canvas id="particleCanvas"></canvas>
+
+<!-- SIDEBAR -->
 <aside class="sidebar" id="sidebar">
-  <div class="sidebar-top">
-    <a href="../home/home.html" class="sidebar-logo"><span class="logo-hex">⬡</span><span class="logo-name">Planora</span></a>
-    <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 4l10 10M14 4L4 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-    </button>
+  <div class="sidebar-logo">
+    <div class="logo-icon"><span>⚡</span></div>
+    <span class="logo-text">Planora</span>
   </div>
   <nav class="sidebar-nav">
-    <div class="nav-section-label">Main</div>
-    <a href="../home/home.html" class="nav-item"><svg class="nav-icon" viewBox="0 0 20 20" fill="none"><path d="M3 9.5L10 3l7 6.5V17a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M7 18V12h6v6" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><span>Home</span></a>
-    <a href="../add-event/add-event.html" class="nav-item"><svg class="nav-icon" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M3 8h14M7 2v4M13 2v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M10 11v4M8 13h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span>Add Event</span></a>
-    <a href="../join-event/join-event.html" class="nav-item"><svg class="nav-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M10 7v6M7 10h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span>Join Event</span></a>
-
-    <div class="nav-section-label">Account</div>
-    <a href="profile.html" class="nav-item active"><svg class="nav-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="4" stroke="currentColor" stroke-width="1.4"/><path d="M3 18c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span>Profile</span></a>
-    <a href="../settings/settings.html" class="nav-item"><svg class="nav-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M10 2.5v2M10 15.5v2M2.5 10h2M15.5 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg><span>Settings</span></a>
+    <p class="nav-label">MAIN</p>
+    <a href="#" class="nav-item"><i class="fa-solid fa-house"></i><span>Home</span></a>
+    <a href="#" class="nav-item"><i class="fa-solid fa-calendar-plus"></i><span>Add Event</span></a>
+    <a href="#" class="nav-item"><i class="fa-solid fa-right-to-bracket"></i><span>Join Event</span></a>
+    <p class="nav-label">MANAGE</p>
+    <a href="#" class="nav-item"><i class="fa-solid fa-list-check"></i><span>Registrations</span></a>
+    <a href="#" class="nav-item"><i class="fa-solid fa-people-group"></i><span>Volunteers</span></a>
+    <a href="#" class="nav-item"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></a>
+    <a href="#" class="nav-item"><i class="fa-solid fa-star"></i><span>Feedback</span></a>
+    <p class="nav-label">DASHBOARDS</p>
+    <a href="#" class="nav-item"><i class="fa-solid fa-chart-pie"></i><span>Organizer</span></a>
+    <a href="#" class="nav-item"><i class="fa-solid fa-ticket"></i><span>Participant</span></a>
+    <a href="#" class="nav-item"><i class="fa-solid fa-hand-holding-heart"></i><span>Volunteer</span></a>
   </nav>
-  <div class="sidebar-footer">
-    <div class="evenza-badge"><div class="evenza-icon">✦</div><div class="evenza-info"><span class="evenza-name">Evenza AI</span><span class="evenza-status">Active</span></div><div class="evenza-ping"></div></div>
-    <div class="sidebar-user"><div class="user-avatar">RK</div><div class="user-info"><span class="user-name">Rishabh Kumar</span><span class="user-role">Organizer</span></div><button class="user-logout" id="logoutBtn" title="Sign out"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 2H3a1 1 0 00-1 1v10a1 1 0 001 1h3M10 11l3-3-3-3M13 8H6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+  <div class="sidebar-bottom">
+    <div class="ai-badge">
+      <div class="ai-dot-wrap"><div class="ai-dot"></div><div class="ai-dot-ring"></div></div>
+      <div><div class="ai-name">Evenza AI</div><div class="ai-sub">3 insights ready</div></div>
+    </div>
+    <div class="user-chip">
+      <div class="user-avatar-sm">RK</div>
+      <div><div class="user-chip-name">Rishabh Kumar</div><div class="user-chip-role">Organizer</div></div>
+      <i class="fa-solid fa-arrow-right-from-bracket logout-icon" id="sidebarLogout"></i>
+    </div>
   </div>
 </aside>
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-<main class="main-content">
+<!-- MAIN WRAP -->
+<div class="main-wrap">
+
+  <!-- TOPBAR -->
   <header class="topbar">
-    <div class="topbar-left">
-      <button class="menu-toggle" id="menuToggle" aria-label="Open sidebar"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
-      <div class="topbar-breadcrumb">
-        <a href="../home/home.html">Home</a>
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-        <span>Profile</span>
-      </div>
+    <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search events, people, places..."/>
+      <kbd>⌘K</kbd>
     </div>
     <div class="topbar-right">
-      <div class="topbar-date" id="topbarDate"></div>
-      <div class="topbar-avatar">RK</div>
+      <!-- LIVE DATE TIME -->
+      <div class="live-datetime">
+        <div class="live-date" id="liveDate"></div>
+        <div class="live-time" id="liveTime"></div>
+      </div>
+      <button class="notif-btn">
+        <i class="fa-solid fa-bell"></i>
+        <span class="badge">3</span>
+        <div class="notif-ring"></div>
+      </button>
+      <div class="user-pill">
+        <div class="user-avatar-pill">RK</div>
+        <div><div class="user-name">Rishabh Kumar</div><div class="user-role">Organizer</div></div>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
     </div>
   </header>
 
-  <div class="content">
-    <div class="page-header">
-      <div>
-        <h1 class="page-title">My Profile</h1>
-        <p class="page-sub">Account details, role, and a quick summary of your recent activity.</p>
+  <!-- PROFILE MAIN -->
+  <main class="profile-main">
+
+    <!-- ======= HERO SECTION ======= -->
+    <section class="profile-hero">
+
+      <!-- COVER -->
+      <div class="cover-art" id="coverArt">
+        <div class="cover-mesh"></div>
+        <div class="cover-orbs">
+          <div class="orb orb1"></div>
+          <div class="orb orb2"></div>
+          <div class="orb orb3"></div>
+        </div>
+        <div class="cover-grid-overlay"></div>
+        <div class="cover-btn-group">
+          <button class="cover-btn" id="changeCoverBtn"><i class="fa-solid fa-camera"></i> Change Cover</button>
+          <button class="cover-btn cover-btn-danger" id="removeCoverBtn" style="display:none"><i class="fa-solid fa-trash"></i> Remove</button>
+        </div>
+        <input type="file" id="coverInput" accept="image/*" style="display:none"/>
       </div>
-      <div class="page-actions">
-        <button class="btn-ghost" id="editBtn">Edit</button>
-        <button class="btn-primary" id="saveBtn" style="display:none">Save</button>
+
+      <!-- PROFILE IDENTITY -->
+      <div class="profile-identity">
+        <!-- AVATAR -->
+        <div class="avatar-wrapper">
+          <div class="avatar-glow-ring">
+            <div class="avatar-ring">
+              <div class="big-avatar" id="bigAvatar">RK</div>
+            </div>
+          </div>
+          <button class="avatar-edit-btn" id="avatarEditBtn"><i class="fa-solid fa-camera"></i></button>
+          <div class="online-dot"></div>
+          <div class="avatar-menu" id="avatarMenu">
+            <div class="avatar-menu-item" id="avatarChangeOpt"><i class="fa-solid fa-upload"></i> Change Photo</div>
+            <div class="avatar-menu-item danger" id="avatarRemoveOpt"><i class="fa-solid fa-trash"></i> Remove Photo</div>
+          </div>
+          <input type="file" id="avatarInput" accept="image/*" style="display:none"/>
+        </div>
+
+        <!-- INFO -->
+        <div class="identity-info">
+          <div class="identity-top">
+            <h1 class="profile-name">Rishabh Kumar</h1>
+            <div class="identity-badges">
+              <span class="role-badge organizer"><i class="fa-solid fa-crown"></i> Organizer</span>
+              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified</span>
+            </div>
+          </div>
+          <p class="profile-handle"><span class="handle-at">@</span>rishabh &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5d2f342e353c3f351d2d313c33322f3c733c2d2d">[email&#160;protected]</a></p>
+          <p class="profile-bio">Building communities through tech events 🚀 &nbsp;|&nbsp; 3× TEDx Organizer &nbsp;|&nbsp; Dev Bootcamp Lead</p>
+          <div class="profile-meta-tags">
+            <span><i class="fa-solid fa-location-dot"></i> Kosi, Uttar Pradesh</span>
+            <span><i class="fa-solid fa-link"></i> rishabh.dev</span>
+            <span><i class="fa-solid fa-calendar-days"></i> Joined Jan 2024</span>
+            <span><i class="fa-solid fa-users"></i> 24 Connections</span>
+          </div>
+
+          <!-- COMPLETION BAR -->
+          <div class="completion-wrap">
+            <div class="completion-header">
+              <span class="completion-title"><i class="fa-solid fa-chart-line"></i> Profile Strength</span>
+              <span class="completion-pct" id="completionPct">78%</span>
+            </div>
+            <div class="completion-bar"><div class="completion-fill" style="width:78%"><div class="completion-shimmer"></div></div></div>
+            <div class="completion-tips">
+              <span class="tip-tag done"><i class="fa-solid fa-check"></i> Photo</span>
+              <span class="tip-tag done"><i class="fa-solid fa-check"></i> Bio</span>
+              <span class="tip-tag done"><i class="fa-solid fa-check"></i> Email</span>
+              <span class="tip-tag todo"><i class="fa-solid fa-plus"></i> Phone</span>
+              <span class="tip-tag todo"><i class="fa-solid fa-plus"></i> Social Links</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO ACTIONS -->
+        <div class="profile-hero-actions">
+          <button class="btn-primary glow-btn" id="editProfileBtn"><i class="fa-solid fa-pen-to-square"></i> Edit Profile</button>
+          <button class="btn-ghost" id="shareBtn"><i class="fa-solid fa-share-nodes"></i> Share</button>
+          <button class="btn-ghost icon-only"><i class="fa-solid fa-ellipsis"></i></button>
+        </div>
       </div>
+
+      <!-- STAT STRIP -->
+      <div class="stat-strip">
+        <div class="stat-item"><div class="stat-icon purple-icon"><i class="fa-solid fa-calendar-plus"></i></div><span class="stat-num" data-target="3">3</span><span class="stat-label">Organized</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><div class="stat-icon cyan-icon"><i class="fa-solid fa-ticket"></i></div><span class="stat-num" data-target="2">2</span><span class="stat-label">Events Joined</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><div class="stat-icon green-icon"><i class="fa-solid fa-hand-holding-heart"></i></div><span class="stat-num" data-target="1">1</span><span class="stat-label">Volunteer Role</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><div class="stat-icon amber-icon"><i class="fa-solid fa-users"></i></div><span class="stat-num" data-target="312">0</span><span class="stat-label">Managed</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><div class="stat-icon gold-icon"><i class="fa-solid fa-star"></i></div><span class="stat-num">4.9★</span><span class="stat-label">Avg Rating</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><div class="stat-icon blue-icon"><i class="fa-solid fa-certificate"></i></div><span class="stat-num" data-target="6">0</span><span class="stat-label">Certificates</span></div>
+      </div>
+    </section>
+
+    <!-- TABS -->
+    <div class="profile-tabs-bar" id="tabsBar">
+      <button class="tab-btn active" data-tab="overview"><i class="fa-solid fa-user"></i><span>Overview</span></button>
+      <button class="tab-btn" data-tab="activity"><i class="fa-solid fa-calendar-check"></i><span>My Activity</span></button>
+      <button class="tab-btn" data-tab="notifications"><i class="fa-solid fa-bell"></i><span>Notifications</span></button>
+      <button class="tab-btn" data-tab="appearance"><i class="fa-solid fa-palette"></i><span>Appearance</span></button>
+      <button class="tab-btn" data-tab="security"><i class="fa-solid fa-shield-halved"></i><span>Security</span></button>
+      <button class="tab-btn" data-tab="privacy"><i class="fa-solid fa-lock"></i><span>Privacy</span></button>
+      <button class="tab-btn" data-tab="payments"><i class="fa-solid fa-credit-card"></i><span>Payments</span></button>
+      <button class="tab-btn" data-tab="connected"><i class="fa-solid fa-plug"></i><span>Connected</span></button>
+      <button class="tab-btn" data-tab="files"><i class="fa-solid fa-folder"></i><span>Files</span></button>
+      <button class="tab-btn" data-tab="appsettings"><i class="fa-solid fa-gear"></i><span>Settings</span></button>
+      <button class="tab-btn" data-tab="help"><i class="fa-solid fa-circle-question"></i><span>Help</span></button>
+      <div class="tab-indicator" id="tabIndicator"></div>
     </div>
 
-    <div class="profile-grid">
-      <div class="section">
-        <div class="section-head"><span class="section-title">Account</span></div>
-        <div class="profile-card">
-          <div class="profile-hero">
-            <div class="p-avatar">RK</div>
-            <div class="p-hero-body">
-              <div class="p-name" id="pNameDisplay">Rishabh Kumar</div>
-              <div class="p-meta"><span id="pEmailDisplay">rishabh@planora.app</span> · <span class="badge badge-approved" id="pRoleDisplay">Organizer</span></div>
+    <!-- TAB PANELS -->
+    <div class="tab-panels">
+
+      <!-- ======= OVERVIEW ======= -->
+      <div class="tab-panel active" id="tab-overview">
+        <div class="two-col">
+          <div class="left-col">
+            <div class="card glass-card">
+              <div class="card-header"><span><i class="fa-solid fa-id-card card-icon"></i> Personal Information</span><button class="card-edit-btn" onclick="openModal('editModal')"><i class="fa-solid fa-pen"></i> Edit</button></div>
+              <div class="info-grid">
+                <div class="info-row"><i class="fa-solid fa-user"></i><div><div class="info-label">Full Name</div><div class="info-val">Rishabh Kumar</div></div></div>
+                <div class="info-row"><i class="fa-solid fa-envelope"></i><div><div class="info-label">Email</div><div class="info-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="98eaf1ebf0f9faf0d8e8f4f9f6f7eaf9b6f9e8e8">[email&#160;protected]</a></div></div></div>
+                <div class="info-row"><i class="fa-solid fa-phone"></i><div><div class="info-label">Phone</div><div class="info-val">+91 98765 43210</div></div></div>
+                <div class="info-row"><i class="fa-solid fa-location-dot"></i><div><div class="info-label">Location</div><div class="info-val">Kosi, Uttar Pradesh, India</div></div></div>
+                <div class="info-row"><i class="fa-solid fa-briefcase"></i><div><div class="info-label">Profession</div><div class="info-val">Software Developer & Event Organizer</div></div></div>
+                <div class="info-row"><i class="fa-solid fa-cake-candles"></i><div><div class="info-label">Date of Birth</div><div class="info-val">March 15, 2002</div></div></div>
+                <div class="info-row"><i class="fa-solid fa-globe"></i><div><div class="info-label">Website</div><div class="info-val">rishabh.dev</div></div></div>
+                <div class="info-row"><i class="fa-brands fa-linkedin"></i><div><div class="info-label">LinkedIn</div><div class="info-val">linkedin.com/in/rishabh-kumar</div></div></div>
+                <div class="info-row"><i class="fa-brands fa-github"></i><div><div class="info-label">GitHub</div><div class="info-val">github.com/rishabh-dev</div></div></div>
+                <div class="info-row"><i class="fa-brands fa-twitter"></i><div><div class="info-label">Twitter / X</div><div class="info-val">@rishabh_dev</div></div></div>
+              </div>
+            </div>
+
+            <div class="card glass-card">
+              <div class="card-header"><span><i class="fa-solid fa-wand-magic-sparkles card-icon"></i> Skills & Expertise</span><button class="card-edit-btn"><i class="fa-solid fa-pen"></i> Edit</button></div>
+              <div class="skills-wrap">
+                <span class="skill-tag">Event Planning</span><span class="skill-tag">Public Speaking</span><span class="skill-tag">Community Building</span><span class="skill-tag">Volunteer Mgmt</span><span class="skill-tag">JavaScript</span><span class="skill-tag">React</span><span class="skill-tag">Node.js</span><span class="skill-tag">UI/UX Design</span><span class="skill-tag">Project Mgmt</span><span class="skill-tag">Marketing</span>
+              </div>
+            </div>
+
+            <div class="card glass-card">
+              <div class="card-header"><span><i class="fa-solid fa-user-tag card-icon"></i> Platform Roles</span></div>
+              <div class="roles-list">
+                <div class="role-item organizer-role"><div class="role-icon-wrap"><i class="fa-solid fa-crown"></i></div><div><div class="role-name">Organizer</div><div class="role-desc">Create & manage events</div></div><span class="role-active-badge">Active</span></div>
+                <div class="role-item participant-role"><div class="role-icon-wrap"><i class="fa-solid fa-ticket"></i></div><div><div class="role-name">Participant</div><div class="role-desc">Joined 2 events</div></div><span class="role-active-badge">Active</span></div>
+                <div class="role-item volunteer-role"><div class="role-icon-wrap"><i class="fa-solid fa-hand-holding-heart"></i></div><div><div class="role-name">Volunteer</div><div class="role-desc">Stage Crew · Dev Bootcamp</div></div><span class="role-active-badge">Active</span></div>
+              </div>
             </div>
           </div>
 
-          <div class="p-form">
-            <div class="field-group">
-              <label>Full name</label>
-              <div class="input-wrap"><input id="nameInput" type="text" value="Rishabh Kumar" disabled /></div>
-            </div>
-            <div class="field-group">
-              <label>Email</label>
-              <div class="input-wrap"><input id="emailInput" type="email" value="rishabh@planora.app" disabled /></div>
-            </div>
-            <div class="field-group">
-              <label>Role</label>
-              <div class="input-wrap">
-                <select id="roleInput" disabled>
-                  <option value="Organizer" selected>Organizer</option>
-                  <option value="Participant">Participant</option>
-                  <option value="Volunteer">Volunteer</option>
-                </select>
+          <div class="right-col">
+            <div class="card glass-card">
+              <div class="card-header"><span><i class="fa-solid fa-calendar-days card-icon"></i> Recent Events</span><a class="card-link" href="#">View all →</a></div>
+              <div class="event-list">
+                <div class="event-mini"><div class="event-mini-icon">💻</div><div><div class="event-mini-title">Tech Summit 2026</div><div class="event-mini-sub">Today · 312/400 attendees</div></div><span class="mini-badge live-badge"><span class="live-dot"></span>LIVE</span></div>
+                <div class="event-mini"><div class="event-mini-icon">🎨</div><div><div class="event-mini-title">Design Workshop</div><div class="event-mini-sub">May 12 · 48/60 attendees</div></div><span class="mini-badge upcoming-badge">UPCOMING</span></div>
+                <div class="event-mini"><div class="event-mini-icon">🚀</div><div><div class="event-mini-title">Dev Bootcamp</div><div class="event-mini-sub">Mar 5 · 200/200 attendees</div></div><span class="mini-badge past-badge">PAST</span></div>
               </div>
+            </div>
+
+            <div class="card glass-card">
+              <div class="card-header"><span><i class="fa-solid fa-medal card-icon"></i> Badges Earned</span><a class="card-link" href="#">View all →</a></div>
+              <div class="badges-grid">
+                <div class="badge-item" title="First Event Organized"><div class="badge-icon gold">🏆</div><div class="badge-label">Pioneer</div></div>
+                <div class="badge-item" title="100+ Attendees"><div class="badge-icon purple">🌟</div><div class="badge-label">Star Host</div></div>
+                <div class="badge-item" title="5-star Rating"><div class="badge-icon blue">⭐</div><div class="badge-label">Top Rated</div></div>
+                <div class="badge-item" title="Volunteer"><div class="badge-icon green">🤝</div><div class="badge-label">Team Player</div></div>
+                <div class="badge-item" title="Explorer"><div class="badge-icon orange">🎟️</div><div class="badge-label">Explorer</div></div>
+                <div class="badge-item locked" title="Organize 10 events to unlock"><div class="badge-icon grey">🔒</div><div class="badge-label">Legend</div></div>
+              </div>
+            </div>
+
+            <div class="card ai-insight-card">
+              <div class="ai-card-glow"></div>
+              <div class="ai-header"><div class="ai-pulse-wrap"><div class="ai-dot"></div><div class="ai-dot-ring"></div></div><span class="ai-title">Evenza AI Insight</span><span class="ai-live-tag">LIVE</span></div>
+              <p class="ai-text">Your events average <strong>89%</strong> attendance rate. You're in the <strong>top 5%</strong> of organizers this month. 🎉</p>
+              <div class="ai-metrics">
+                <div class="ai-metric"><div class="ai-metric-val">89%</div><div class="ai-metric-label">Attendance</div></div>
+                <div class="ai-metric"><div class="ai-metric-val">4.9</div><div class="ai-metric-label">Rating</div></div>
+                <div class="ai-metric"><div class="ai-metric-val">Top 5%</div><div class="ai-metric-label">Ranking</div></div>
+              </div>
+              <a href="#" class="ai-link">View full report <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="section">
-        <div class="section-head"><span class="section-title">Recent Activity</span></div>
-        <div class="activity" id="activity"></div>
+      <!-- ======= ACTIVITY ======= -->
+      <div class="tab-panel" id="tab-activity">
+        <div class="stats-row">
+          <div class="stat-big-card purple-stat"><div class="sbc-glow"></div><div class="sbc-icon"><i class="fa-solid fa-calendar-plus"></i></div><div class="sbc-num">3</div><div class="sbc-label">Events Hosted</div><div class="sbc-bar"><div class="sbc-fill" style="width:60%"></div></div></div>
+          <div class="stat-big-card cyan-stat"><div class="sbc-glow"></div><div class="sbc-icon"><i class="fa-solid fa-ticket"></i></div><div class="sbc-num">2</div><div class="sbc-label">Events Attended</div><div class="sbc-bar"><div class="sbc-fill" style="width:40%"></div></div></div>
+          <div class="stat-big-card green-stat"><div class="sbc-glow"></div><div class="sbc-icon"><i class="fa-solid fa-hand-holding-heart"></i></div><div class="sbc-num">1</div><div class="sbc-label">Volunteered</div><div class="sbc-bar"><div class="sbc-fill" style="width:20%"></div></div></div>
+          <div class="stat-big-card orange-stat"><div class="sbc-glow"></div><div class="sbc-icon"><i class="fa-solid fa-bookmark"></i></div><div class="sbc-num">5</div><div class="sbc-label">Saved Events</div><div class="sbc-bar"><div class="sbc-fill" style="width:50%"></div></div></div>
+        </div>
+        <div class="section-heading-row" style="margin-top:28px"><h3 class="section-heading"><i class="fa-solid fa-calendar-days"></i> My Events</h3></div>
+        <div class="events-filter-bar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="created">Created</button>
+          <button class="filter-btn" data-filter="registered">Registered</button>
+          <button class="filter-btn" data-filter="past">Past</button>
+          <button class="filter-btn" data-filter="saved">Saved</button>
+          <button class="filter-btn" data-filter="tickets">Tickets</button>
+        </div>
+        <div class="events-grid" id="eventsGrid">
+          <div class="event-card-full live-card" data-type="created"><div class="event-card-accent"></div><div class="ecf-top"><div class="ecf-icon">💻</div><div class="ecf-info"><div class="ecf-title">Tech Summit 2026</div><div class="ecf-meta"><i class="fa-solid fa-calendar"></i> Today · 10:00 AM &nbsp;|&nbsp; <i class="fa-solid fa-location-dot"></i> Online</div></div><span class="mini-badge live-badge"><span class="live-dot"></span>LIVE</span></div><div class="ecf-progress"><div class="ecf-progress-bar" style="width:78%"></div></div><div class="ecf-footer"><span>312 / 400 · 78% full</span><span class="ecf-role organizer-role-tag">Organizer</span></div><div class="ecf-actions"><button class="ecf-btn"><i class="fa-solid fa-chart-line"></i> Dashboard</button><button class="ecf-btn"><i class="fa-solid fa-qrcode"></i> Attendance</button><button class="ecf-btn ghost-btn"><i class="fa-solid fa-share-nodes"></i> Share</button></div></div>
+          <div class="event-card-full upcoming-card" data-type="created"><div class="event-card-accent"></div><div class="ecf-top"><div class="ecf-icon">🎨</div><div class="ecf-info"><div class="ecf-title">Design Workshop</div><div class="ecf-meta"><i class="fa-solid fa-calendar"></i> May 12, 2026 &nbsp;|&nbsp; <i class="fa-solid fa-location-dot"></i> Mumbai</div></div><span class="mini-badge upcoming-badge">UPCOMING</span></div><div class="ecf-progress"><div class="ecf-progress-bar" style="width:80%"></div></div><div class="ecf-footer"><span>48/60 · 80% full</span><span class="ecf-role organizer-role-tag">Organizer</span></div><div class="ecf-actions"><button class="ecf-btn"><i class="fa-solid fa-pen"></i> Edit</button><button class="ecf-btn"><i class="fa-solid fa-bell"></i> Notify</button><button class="ecf-btn ghost-btn"><i class="fa-solid fa-trash"></i> Delete</button></div></div>
+          <div class="event-card-full past-card" data-type="past registered"><div class="event-card-accent"></div><div class="ecf-top"><div class="ecf-icon">🚀</div><div class="ecf-info"><div class="ecf-title">Dev Bootcamp</div><div class="ecf-meta"><i class="fa-solid fa-calendar"></i> Mar 5, 2026 &nbsp;|&nbsp; <i class="fa-solid fa-location-dot"></i> Delhi</div></div><span class="mini-badge past-badge">PAST</span></div><div class="ecf-progress"><div class="ecf-progress-bar" style="width:100%"></div></div><div class="ecf-footer"><span>200/200 · Full House 🎉</span><span class="ecf-role volunteer-role-tag">Volunteer</span></div><div class="ecf-actions"><button class="ecf-btn"><i class="fa-solid fa-certificate"></i> Certificate</button><button class="ecf-btn ghost-btn"><i class="fa-solid fa-star"></i> Feedback</button></div></div>
+          <div class="event-card-full saved-card" data-type="saved"><div class="event-card-accent"></div><div class="ecf-top"><div class="ecf-icon">🤖</div><div class="ecf-info"><div class="ecf-title">AI Innovation Summit</div><div class="ecf-meta"><i class="fa-solid fa-calendar"></i> Jun 1, 2026 &nbsp;|&nbsp; <i class="fa-solid fa-location-dot"></i> Bangalore</div></div><span class="mini-badge upcoming-badge">UPCOMING</span></div><div class="ecf-progress"><div class="ecf-progress-bar" style="width:45%"></div></div><div class="ecf-footer"><span>180/400 · 45% full</span><span class="ecf-role saved-role-tag">Saved</span></div><div class="ecf-actions"><button class="ecf-btn"><i class="fa-solid fa-ticket"></i> Register</button><button class="ecf-btn ghost-btn"><i class="fa-solid fa-bookmark-slash"></i> Unsave</button></div></div>
+          <div class="event-card-full ticket-card" data-type="tickets registered"><div class="event-card-accent"></div><div class="ecf-top"><div class="ecf-icon">🎵</div><div class="ecf-info"><div class="ecf-title">Music & Tech Fest</div><div class="ecf-meta"><i class="fa-solid fa-calendar"></i> May 20, 2026 &nbsp;|&nbsp; <i class="fa-solid fa-location-dot"></i> Hyderabad</div></div><span class="mini-badge upcoming-badge">UPCOMING</span></div><div class="ticket-info"><i class="fa-solid fa-qrcode"></i> Ticket #PLN-20482 · Seat A-12 · General Admission</div><div class="ecf-footer"><span>Registered Apr 1, 2026</span><span class="ecf-role participant-role-tag">Participant</span></div><div class="ecf-actions"><button class="ecf-btn"><i class="fa-solid fa-qrcode"></i> View Ticket</button><button class="ecf-btn ghost-btn"><i class="fa-solid fa-download"></i> Download</button></div></div>
+        </div>
+      </div>
+
+      <!-- ======= NOTIFICATIONS ======= -->
+      <div class="tab-panel" id="tab-notifications">
+        <div class="settings-layout">
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-envelope card-icon"></i> Email Notifications</span></div><div class="toggle-row"><span><b>New Registration Alerts</b><br/><small>When someone registers for your event</small></span><label class="toggle"><input type="checkbox" checked/><span class="slider"></span></label></div><div class="toggle-row"><span><b>Event Reminders</b><br/><small>24h and 1h before events</small></span><label class="toggle"><input type="checkbox" checked/><span class="slider"></span></label></div><div class="toggle-row"><span><b>Feedback Received</b></span><label class="toggle"><input type="checkbox" checked/><span class="slider"></span></label></div><div class="toggle-row"><span><b>Volunteer Applications</b></span><label class="toggle"><input type="checkbox"/><span class="slider"></span></label></div><div class="toggle-row"><span><b>Marketing & Promotions</b></span><label class="toggle"><input type="checkbox"/><span class="slider"></span></label></div><div class="toggle-row"><span><b>Weekly Digest</b></span><label class="toggle"><input type="checkbox" checked/><span class="slider"></span></label></div></div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-mobile-screen card-icon"></i> Push Notifications</span></div><div class="toggle-row"><span><b>Browser Push</b></span><label class="toggle"><input type="checkbox" checked/><span class="slider"></span></label></div><div class="toggle-row"><span><b>Check-in Alerts</b></span><label class="toggle"><input type="checkbox" checked/><span class="slider"></span></label></div><div class="toggle-row"><span><b>Live Event Updates</b></span><label class="toggle"><input type="checkbox" checked/><span class="slider"></span></label></div><div class="toggle-row"><span><b>Message Alerts</b></span><label class="toggle"><input type="checkbox" checked/><span class="slider"></span></label></div></div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-clock card-icon"></i> Reminder Settings</span></div><div class="settings-field"><label>Send reminder before event</label><select class="settings-select"><option>1 hour before</option><option selected>24 hours before</option><option>48 hours before</option><option>1 week before</option></select></div><div class="settings-field" style="margin-top:12px"><label>Quiet Hours</label><div class="time-range-row"><input type="time" value="22:00" class="settings-input-sm"/><span style="color:var(--text-muted)">to</span><input type="time" value="08:00" class="settings-input-sm"/></div></div><button class="btn-primary save-btn" style="margin-top:16px">Save Preferences</button></div>
+        </div>
+      </div>
+
+      <!-- ======= APPEARANCE ======= -->
+      <div class="tab-panel" id="tab-appearance">
+        <div class="settings-layout">
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-moon card-icon"></i> Theme Mode</span></div><div class="theme-mode-grid"><div class="theme-option" data-mode="dark"><div class="theme-preview dark-preview"><div class="tp-dot"></div><div class="tp-line"></div><div class="tp-line short"></div></div><span>Dark</span></div><div class="theme-option" data-mode="light"><div class="theme-preview light-preview"><div class="tp-dot light-dot"></div><div class="tp-line light-line"></div><div class="tp-line short light-line"></div></div><span>Light</span></div><div class="theme-option" data-mode="system"><div class="theme-preview system-preview"></div><span>System</span></div></div></div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-droplet card-icon"></i> Accent Color</span><span class="color-preview-badge" id="colorPreviewBadge">Purple</span></div><div class="color-palette"><div class="color-swatch" style="background:#7c3aed" data-color="#7c3aed" data-name="Purple" title="Purple"></div><div class="color-swatch" style="background:#06b6d4" data-color="#06b6d4" data-name="Cyan" title="Cyan"></div><div class="color-swatch" style="background:#10b981" data-color="#10b981" data-name="Green" title="Green"></div><div class="color-swatch" style="background:#f59e0b" data-color="#f59e0b" data-name="Amber" title="Amber"></div><div class="color-swatch" style="background:#ef4444" data-color="#ef4444" data-name="Red" title="Red"></div><div class="color-swatch" style="background:#ec4899" data-color="#ec4899" data-name="Pink" title="Pink"></div><div class="color-swatch" style="background:#3b82f6" data-color="#3b82f6" data-name="Blue" title="Blue"></div><div class="color-swatch custom-swatch" title="Custom"><input type="color" value="#7c3aed" id="customColor"/><i class="fa-solid fa-plus"></i></div></div></div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-text-height card-icon"></i> Font Size</span></div><div class="font-size-row"><span class="fs-label small-fs">A</span><input type="range" min="12" max="20" value="14" class="range-slider" id="fontSizeSlider"/><span class="fs-label large-fs">A</span><span class="fs-value" id="fontSizeValue">14px</span></div><p class="appearance-preview-text" id="previewText">Preview: The quick brown fox jumps over the lazy dog.</p></div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-table-columns card-icon"></i> Layout Preference</span></div><div class="layout-options"><div class="layout-opt active" data-layout="sidebar"><i class="fa-solid fa-sidebar"></i><span>Sidebar</span></div><div class="layout-opt" data-layout="topnav"><i class="fa-solid fa-bars"></i><span>Top Nav</span></div><div class="layout-opt" data-layout="compact"><i class="fa-solid fa-compress"></i><span>Compact</span></div></div><button class="btn-primary save-btn" style="margin-top:16px">Apply Settings</button></div>
+        </div>
+      </div>
+
+      <!-- ======= SECURITY ======= -->
+      <div class="tab-panel" id="tab-security">
+        <div class="settings-layout">
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-key card-icon"></i> Change Password</span></div><div class="settings-field"><label>Current Password</label><div class="pw-field"><input type="password" placeholder="Enter current password" id="currentPw"/><button class="pw-toggle" data-target="currentPw"><i class="fa-solid fa-eye"></i></button></div></div><div class="settings-field" style="margin-top:12px"><label>New Password</label><div class="pw-field"><input type="password" placeholder="Enter new password" id="newPw"/><button class="pw-toggle" data-target="newPw"><i class="fa-solid fa-eye"></i></button></div></div><div class="pw-strength-wrap"><div class="pw-strength-bar"><div class="pw-strength-fill" id="pwStrengthFill"></div></div><span class="pw-strength-label" id="pwStrengthLabel">Enter a password</span></div><div class="settings-field"><label>Confirm Password</label><div class="pw-field"><input type="password" placeholder="Confirm new password" id="confirmPw"/><button class="pw-toggle" data-target="confirmPw"><i class="fa-solid fa-eye"></i></button></div></div><button class="btn-primary save-btn" style="margin-top:12px">Update Password</button></div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-envelope card-icon"></i> Update Email</span></div><div class="settings-field"><label>Current Email</label><input type="email" value="rishabh@planora.app" readonly class="readonly-field"/></div><div class="settings-field" style="margin-top:12px"><label>New Email</label><input type="email" placeholder="Enter new email"/></div><div class="settings-field" style="margin-top:12px"><label>Confirm with Password</label><input type="password" placeholder="Your password"/></div><button class="btn-primary save-btn" style="margin-top:12px">Update Email</button></div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-shield-halved card-icon"></i> Two-Factor Authentication</span><span class="status-tag disabled-tag">Disabled</span></div><p class="card-desc">Adds an extra layer of security to your account.</p><div class="tfa-options"><div class="tfa-option"><i class="fa-solid fa-mobile-screen"></i><div><div class="tfa-name">Authenticator App</div><div class="tfa-desc">Google Authenticator or Authy</div></div><button class="btn-primary tfa-enable-btn">Enable</button></div><div class="tfa-option"><i class="fa-solid fa-message"></i><div><div class="tfa-name">SMS Verification</div><div class="tfa-desc">Codes via text message</div></div><button class="btn-primary tfa-enable-btn">Enable</button></div><div class="tfa-option"><i class="fa-solid fa-envelope"></i><div><div class="tfa-name">Email OTP</div><div class="tfa-desc">Codes via email</div></div><button class="btn-primary tfa-enable-btn">Enable</button></div></div></div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-clock-rotate-left card-icon"></i> Login Activity</span><button class="btn-danger-sm" id="logoutAllBtn">Logout All Devices</button></div><div class="login-activity-list"><div class="login-item current"><div class="login-device"><i class="fa-solid fa-laptop"></i><div><div class="login-device-name">Chrome · Windows 11 <span class="current-tag">Current</span></div><div class="login-meta">Kosi, UP · Today</div></div></div><button class="login-revoke disabled">Active</button></div><div class="login-item"><div class="login-device"><i class="fa-brands fa-android"></i><div><div class="login-device-name">Android App · Pixel 7</div><div class="login-meta">Kosi, UP · Apr 6</div></div></div><button class="login-revoke">Revoke</button></div><div class="login-item"><div class="login-device"><i class="fa-solid fa-desktop"></i><div><div class="login-device-name">Firefox · macOS</div><div class="login-meta">Delhi · Apr 4</div></div></div><button class="login-revoke">Revoke</button></div></div></div>
+        </div>
+      </div>
+
+      <!-- ======= PRIVACY ======= -->
+      <div class="tab-panel" id="tab-privacy">
+        <div class="settings-layout">
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-eye card-icon"></i> Profile Visibility</span></div><div class="visibility-options"><div class="vis-opt active" data-vis="public"><i class="fa-solid fa-earth-asia"></i><div><div class="vis-name">Public</div><div class="vis-desc">Anyone can view your profile</div></div><div class="vis-radio active-radio"></div></div><div class="vis-opt" data-vis="connections"><i class="fa-solid fa-user-group"></i><div><div class="vis-name">Connections Only</div><div class="vis-desc">Only your connections</div></div><div class="vis-radio"></div></div><div class="vis-opt" data-vis="private"><i class="fa-solid fa-lock"></i><div><div class="vis-name">Private</div><div class="vis-desc">Only you can see</div></div><div class="vis-radio"></div></div></div></div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-sliders card-icon"></i> Information Visibility</span></div><div class="toggle-row"><span><b>Show Email Address</b></span><label class="toggle"><input type="checkbox"/><span class="slider"></span></label></div><div class="toggle-row"><span><b>Show Phone Number</b></span><label class="toggle"><input type="checkbox"/><span class="slider"></span></label></div><div class="toggle-row"><span><b>Show Events I'm Attending</b></span><label class="toggle"><input type="checkbox" checked/><span class="slider"></span></label></div><div class="toggle-row"><span><b>Show Badges & Certificates</b></span><label class="toggle"><input type="checkbox" checked/><span class="slider"></span></label></div><div class="toggle-row"><span><b>Allow Connection Requests</b></span><label class="toggle"><input type="checkbox" checked/><span class="slider"></span></label></div></div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-database card-icon"></i> Data & Privacy</span></div><div class="toggle-row"><span><b>Analytics</b><br/><small>Help improve Planora</small></span><label class="toggle"><input type="checkbox" checked/><span class="slider"></span></label></div><div class="toggle-row"><span><b>Personalized Recommendations</b></span><label class="toggle"><input type="checkbox" checked/><span class="slider"></span></label></div><div class="privacy-actions"><button class="btn-ghost"><i class="fa-solid fa-download"></i> Download My Data</button><button class="btn-ghost"><i class="fa-solid fa-file-shield"></i> Privacy Policy</button></div></div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-ban card-icon"></i> Blocked Users</span></div><div class="blocked-empty"><i class="fa-solid fa-shield-check"></i><p>No blocked users.</p></div></div>
+        </div>
+      </div>
+
+      <!-- ======= PAYMENTS ======= -->
+      <div class="tab-panel" id="tab-payments">
+        <div class="settings-layout">
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-credit-card card-icon"></i> Payment Methods</span><button class="btn-primary sm-btn" id="addPaymentBtn"><i class="fa-solid fa-plus"></i> Add New</button></div><div class="payment-methods"><div class="payment-card default-card"><div class="card-brand"><i class="fa-brands fa-cc-visa" style="color:#1a1f71;font-size:1.8rem"></i></div><div class="card-details"><div class="card-number">•••• •••• •••• 4242</div><div class="card-expiry">Expires 08/27 · Rishabh Kumar</div></div><span class="default-badge">Default</span><button class="card-remove"><i class="fa-solid fa-trash"></i></button></div><div class="payment-card"><div class="card-brand"><i class="fa-brands fa-cc-mastercard" style="color:#eb001b;font-size:1.8rem"></i></div><div class="card-details"><div class="card-number">•••• •••• •••• 8821</div><div class="card-expiry">Expires 12/26 · Rishabh Kumar</div></div><button class="set-default-btn">Set Default</button><button class="card-remove"><i class="fa-solid fa-trash"></i></button></div><div class="payment-card upi-card"><div class="card-brand"><span class="upi-logo">UPI</span></div><div class="card-details"><div class="card-number">rishabh@upi</div><div class="card-expiry">Google Pay linked</div></div><button class="card-remove"><i class="fa-solid fa-trash"></i></button></div></div></div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-receipt card-icon"></i> Transaction History</span><button class="btn-ghost sm-btn"><i class="fa-solid fa-download"></i> Export</button></div><div class="transaction-list"><div class="txn-item"><div class="txn-icon success-txn"><i class="fa-solid fa-arrow-down"></i></div><div class="txn-info"><div class="txn-title">Music & Tech Fest – Ticket</div><div class="txn-meta">Apr 1, 2026 · Visa ••4242</div></div><div class="txn-amount debit-amt">-₹499</div></div><div class="txn-item"><div class="txn-icon refund-txn"><i class="fa-solid fa-rotate-left"></i></div><div class="txn-info"><div class="txn-title">Refund – Cancelled Event</div><div class="txn-meta">Mar 28, 2026 · Mastercard ••8821</div></div><div class="txn-amount credit-amt">+₹299</div></div><div class="txn-item"><div class="txn-icon success-txn"><i class="fa-solid fa-arrow-down"></i></div><div class="txn-info"><div class="txn-title">AI Innovation Summit</div><div class="txn-meta">Mar 20, 2026 · UPI</div></div><div class="txn-amount debit-amt">-₹199</div></div><div class="txn-item"><div class="txn-icon success-txn"><i class="fa-solid fa-arrow-down"></i></div><div class="txn-info"><div class="txn-title">Dev Bootcamp</div><div class="txn-meta">Feb 15, 2026 · Visa ••4242</div></div><div class="txn-amount debit-amt">-₹999</div></div></div></div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-file-invoice card-icon"></i> Billing Details</span><button class="card-edit-btn" onclick="openModal('editModal')"><i class="fa-solid fa-pen"></i> Edit</button></div><div class="info-grid"><div class="info-row"><i class="fa-solid fa-user"></i><div><div class="info-label">Name</div><div class="info-val">Rishabh Kumar</div></div></div><div class="info-row"><i class="fa-solid fa-envelope"></i><div><div class="info-label">Billing Email</div><div class="info-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2b594258434a49436b5b474a4544594a054a5b5b">[email&#160;protected]</a></div></div></div><div class="info-row"><i class="fa-solid fa-location-dot"></i><div><div class="info-label">Address</div><div class="info-val">Kosi, UP – 281403, India</div></div></div></div></div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-hand-holding-dollar card-icon"></i> Refund Requests</span></div><div class="blocked-empty"><i class="fa-solid fa-check-circle"></i><p>No pending refunds.</p></div><button class="btn-ghost" style="margin-top:12px"><i class="fa-solid fa-plus"></i> Request a Refund</button></div>
+        </div>
+      </div>
+
+      <!-- ======= CONNECTED ======= -->
+      <div class="tab-panel" id="tab-connected">
+        <div class="settings-layout">
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-plug card-icon"></i> Connected Accounts</span></div><p class="card-desc">Connect for quick sign-in and profile sync.</p><div class="connected-list"><div class="connected-item connected"><div class="conn-brand google"><i class="fa-brands fa-google"></i></div><div><div class="conn-brand-name">Google</div><div class="conn-brand-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="88fae1fbe0e9eae0c8efe5e9e1e4a6ebe7e5">[email&#160;protected]</a> · Connected</div></div><button class="disconnect-btn">Disconnect</button></div><div class="connected-item"><div class="conn-brand github-brand"><i class="fa-brands fa-github"></i></div><div><div class="conn-brand-name">GitHub</div><div class="conn-brand-email">Not connected</div></div><button class="connect-btn">Connect</button></div><div class="connected-item"><div class="conn-brand facebook"><i class="fa-brands fa-facebook-f"></i></div><div><div class="conn-brand-name">Facebook</div><div class="conn-brand-email">Not connected</div></div><button class="connect-btn">Connect</button></div><div class="connected-item"><div class="conn-brand twitter-brand"><i class="fa-brands fa-twitter"></i></div><div><div class="conn-brand-name">Twitter / X</div><div class="conn-brand-email">Not connected</div></div><button class="connect-btn">Connect</button></div><div class="connected-item"><div class="conn-brand linkedin-brand"><i class="fa-brands fa-linkedin-in"></i></div><div><div class="conn-brand-name">LinkedIn</div><div class="conn-brand-email">Not connected</div></div><button class="connect-btn">Connect</button></div></div></div>
+        </div>
+      </div>
+
+      <!-- ======= FILES ======= -->
+      <div class="tab-panel" id="tab-files">
+        <div class="files-header-row"><div class="events-filter-bar"><button class="filter-btn active">All</button><button class="filter-btn">Certificates</button><button class="filter-btn">Attachments</button></div><button class="btn-primary"><i class="fa-solid fa-upload"></i> Upload File</button></div>
+        <div class="files-grid">
+          <div class="file-card"><div class="file-icon">🎓</div><div class="file-info"><div class="file-name">Best_Organizer_Award.pdf</div><div class="file-meta">PDF · 1.2 MB · Mar 2025</div></div><div class="file-actions"><button class="file-btn"><i class="fa-solid fa-eye"></i></button><button class="file-btn"><i class="fa-solid fa-download"></i></button><button class="file-btn danger"><i class="fa-solid fa-trash"></i></button></div></div>
+          <div class="file-card"><div class="file-icon">📜</div><div class="file-info"><div class="file-name">DevBootcamp_Certificate.pdf</div><div class="file-meta">PDF · 0.8 MB · Mar 2026</div></div><div class="file-actions"><button class="file-btn"><i class="fa-solid fa-eye"></i></button><button class="file-btn"><i class="fa-solid fa-download"></i></button><button class="file-btn danger"><i class="fa-solid fa-trash"></i></button></div></div>
+          <div class="file-card"><div class="file-icon">🖼️</div><div class="file-info"><div class="file-name">TechSummit_Banner.png</div><div class="file-meta">PNG · 3.4 MB · Today</div></div><div class="file-actions"><button class="file-btn"><i class="fa-solid fa-eye"></i></button><button class="file-btn"><i class="fa-solid fa-download"></i></button><button class="file-btn danger"><i class="fa-solid fa-trash"></i></button></div></div>
+          <div class="file-card"><div class="file-icon">📄</div><div class="file-info"><div class="file-name">Workshop_Schedule.docx</div><div class="file-meta">DOCX · 256 KB · Apr 2026</div></div><div class="file-actions"><button class="file-btn"><i class="fa-solid fa-eye"></i></button><button class="file-btn"><i class="fa-solid fa-download"></i></button><button class="file-btn danger"><i class="fa-solid fa-trash"></i></button></div></div>
+          <div class="file-upload-slot" id="fileUploadSlot"><i class="fa-solid fa-cloud-arrow-up"></i><span>Drop files or click to upload</span></div>
+        </div>
+        <div class="storage-bar-wrap"><div class="storage-label"><span>Storage Used</span><span>47 MB of 500 MB</span></div><div class="storage-bar"><div class="storage-fill" style="width:9.4%"></div></div></div>
+      </div>
+
+      <!-- ======= APP SETTINGS ======= -->
+      <div class="tab-panel" id="tab-appsettings">
+        <div class="settings-layout">
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-language card-icon"></i> Language & Region</span></div><div class="settings-field"><label>Language</label><select class="settings-select"><option selected>English (US)</option><option>Hindi (हिन्दी)</option><option>French (Français)</option><option>Spanish (Español)</option></select></div><div class="settings-field" style="margin-top:12px"><label>Timezone</label><select class="settings-select"><option selected>Asia/Kolkata (IST, UTC+5:30)</option><option>America/New_York (EST)</option><option>Europe/London (GMT)</option></select></div><div class="settings-field" style="margin-top:12px"><label>Date Format</label><select class="settings-select"><option selected>DD/MM/YYYY</option><option>MM/DD/YYYY</option><option>YYYY-MM-DD</option></select></div><button class="btn-primary save-btn" style="margin-top:16px">Save Preferences</button></div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-home card-icon"></i> Default Page</span></div><div class="default-page-options"><div class="dp-opt active" data-page="home"><i class="fa-solid fa-house"></i><span>Home</span><div class="dp-radio active-radio"></div></div><div class="dp-opt" data-page="organizer"><i class="fa-solid fa-chart-pie"></i><span>Organizer Dashboard</span><div class="dp-radio"></div></div><div class="dp-opt" data-page="events"><i class="fa-solid fa-calendar"></i><span>My Events</span><div class="dp-radio"></div></div><div class="dp-opt" data-page="participant"><i class="fa-solid fa-ticket"></i><span>Participant Dashboard</span><div class="dp-radio"></div></div></div></div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-broom card-icon"></i> Cache & Storage</span></div><div class="cache-info"><span>Local Cache</span><span class="cache-size">12.4 MB</span></div><div class="cache-actions"><button class="btn-ghost" id="clearCacheBtn"><i class="fa-solid fa-trash-can"></i> Clear Cache</button><button class="btn-ghost"><i class="fa-solid fa-rotate"></i> Reset Defaults</button></div></div>
+        </div>
+      </div>
+
+      <!-- ======= HELP ======= -->
+      <div class="tab-panel" id="tab-help">
+        <div class="settings-layout">
+          <div class="help-search-wrap"><div class="help-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Search help articles..."/></div></div>
+          <div class="help-grid">
+            <a href="#" class="help-card"><div class="help-icon"><i class="fa-solid fa-book-open"></i></div><div><div class="help-title">Help Center</div><div class="help-desc">Articles & guides</div></div><i class="fa-solid fa-arrow-right help-arrow"></i></a>
+            <a href="#" class="help-card"><div class="help-icon"><i class="fa-solid fa-headset"></i></div><div><div class="help-title">Contact Support</div><div class="help-desc">Talk to our team</div></div><i class="fa-solid fa-arrow-right help-arrow"></i></a>
+            <a href="#" class="help-card"><div class="help-icon"><i class="fa-solid fa-circle-question"></i></div><div><div class="help-title">FAQs</div><div class="help-desc">Common questions</div></div><i class="fa-solid fa-arrow-right help-arrow"></i></a>
+            <a href="#" class="help-card"><div class="help-icon"><i class="fa-solid fa-bug"></i></div><div><div class="help-title">Report Issue</div><div class="help-desc">Tell us about bugs</div></div><i class="fa-solid fa-arrow-right help-arrow"></i></a>
+            <a href="#" class="help-card"><div class="help-icon"><i class="fa-solid fa-lightbulb"></i></div><div><div class="help-title">Feature Requests</div><div class="help-desc">Suggest improvements</div></div><i class="fa-solid fa-arrow-right help-arrow"></i></a>
+            <a href="#" class="help-card"><div class="help-icon"><i class="fa-brands fa-discord"></i></div><div><div class="help-title">Community</div><div class="help-desc">Join our Discord</div></div><i class="fa-solid fa-arrow-right help-arrow"></i></a>
+          </div>
+          <div class="card glass-card"><div class="card-header"><span><i class="fa-solid fa-message card-icon"></i> Contact Support</span></div><div class="settings-field"><label>Subject</label><input type="text" placeholder="What's the issue?"/></div><div class="settings-field" style="margin-top:12px"><label>Category</label><select class="settings-select"><option>Event Issue</option><option>Payment Problem</option><option>Account Access</option><option>Bug Report</option><option>Other</option></select></div><div class="settings-field" style="margin-top:12px"><label>Message</label><textarea rows="4" placeholder="Describe your issue..."></textarea></div><button class="btn-primary save-btn" style="margin-top:12px"><i class="fa-solid fa-paper-plane"></i> Send Message</button></div>
+          <div class="app-version-info"><span>Planora v2.4.1</span><span>·</span><a href="#">Terms</a><span>·</span><a href="#">Privacy</a><span>·</span><a href="#">Changelog</a></div>
+        </div>
+      </div>
+
+    </div><!-- /tab-panels -->
+
+    <!-- FOOTER ACTIONS -->
+    <div class="account-actions-footer">
+      <div class="footer-left">
+        <div class="footer-avatar">RK</div>
+        <div><div class="footer-name">Rishabh Kumar</div><div class="footer-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d2a0bba1bab3b0ba92a2beb3bcbda0b3fcb3a2a2">[email&#160;protected]</a></div></div>
+      </div>
+      <div class="footer-right">
+        <button class="btn-ghost" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+        <button class="btn-danger-outline" id="deleteAccountBtn"><i class="fa-solid fa-triangle-exclamation"></i> Delete Account</button>
       </div>
     </div>
-  </div>
-</main>
 
-<script src="../../shared/js/ui.js"></script>
-<script src="profile.js"></script>
-</body>
-</html>
+  </main>
+</div>
+
+<!-- ===== MODALS ===== -->
+
+<!-- Edit Profile -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal-box"><div class="modal-header"><span><i class="fa-solid fa-pen-to-square"></i> Edit Profile</span><button class="modal-close" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button></div><div class="modal-body"><div class="settings-field"><label>Full Name</label><input type="text" value="Rishabh Kumar"/></div><div class="settings-field"><label>Username</label><input type="text" value="rishabh"/></div><div class="settings-field"><label>Bio</label><textarea rows="3">Building communities through tech events 🚀 | 3x TEDx Organizer | Dev Bootcamp Lead</textarea></div><div class="settings-field"><label>Profession</label><input type="text" value="Software Developer & Event Organizer"/></div><div class="settings-field"><label>Location</label><input type="text" value="Kosi, Uttar Pradesh, India"/></div><div class="settings-field"><label>Website</label><input type="text" value="rishabh.dev"/></div></div><div class="modal-footer"><button class="btn-ghost" onclick="closeAllModals()">Cancel</button><button class="btn-primary">Save Changes</button></div></div>
+</div>
+
+<!-- Add Payment -->
+<div class="modal-overlay" id="addPaymentModal">
+  <div class="modal-box"><div class="modal-header"><span><i class="fa-solid fa-credit-card"></i> Add Payment Method</span><button class="modal-close" id="closeAddPayment"><i class="fa-solid fa-xmark"></i></button></div><div class="modal-body"><div class="pay-type-tabs"><button class="pay-type-btn active" data-type="card"><i class="fa-solid fa-credit-card"></i> Card</button><button class="pay-type-btn" data-type="upi"><span style="font-size:.65rem;font-weight:800;background:linear-gradient(135deg,#3b82f6,#06b6d4);color:#fff;padding:1px 5px;border-radius:3px">UPI</span> UPI</button><button class="pay-type-btn" data-type="netbanking"><i class="fa-solid fa-building-columns"></i> Net Banking</button></div><div class="pay-form-section" id="payForm-card" style="display:flex"><div class="settings-field"><label>Cardholder Name</label><input type="text" id="cardName" placeholder="Name on card"/></div><div class="settings-field"><label>Card Number</label><input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19"/></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div class="settings-field"><label>Expiry</label><input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5"/></div><div class="settings-field"><label>CVV</label><input type="password" placeholder="•••" maxlength="4"/></div></div></div><div class="pay-form-section" id="payForm-upi" style="display:none"><div class="settings-field"><label>UPI ID</label><input type="text" id="upiId" placeholder="yourname@upi"/></div></div><div class="pay-form-section" id="payForm-netbanking" style="display:none"><div class="settings-field"><label>Select Bank</label><select class="settings-select" id="nbBank"><option>State Bank of India</option><option>HDFC Bank</option><option>ICICI Bank</option><option>Axis Bank</option><option>Kotak Mahindra Bank</option></select></div></div></div><div class="modal-footer"><button class="btn-ghost" id="cancelAddPayment">Cancel</button><button class="btn-primary" id="confirmAddPayment"><i class="fa-solid fa-plus"></i> Add Method</button></div></div>
+</div>
+
+<!-- Logout -->
+<div class="modal-overlay" id="logoutModal">
+  <div class="modal-box modal-sm"><div class="modal-header"><span><i class="fa-solid fa-right-from-bracket"></i> Confirm Logout</span><button class="modal-close" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button></div><div class="modal-body"><p style="color:var(--text-sub)">Are you sure you want to log out of Planora?</p></div><div class="modal-footer"><button class="btn-ghost" onclick="closeAllModals()">Cancel</button><button class="btn-primary">Yes, Logout</button></div></div>
+</div>
+
+<!-- Delete Account -->
+<div class="modal-overlay" id="deleteModal">
+  <div class="modal-box modal-sm"><div class="modal-header" style="border-color:rgba(239,68,68,.25)"><span style="color:var(--red)"><i class="fa-solid fa-triangle-exclamation"></i> Delete Account</span><button class="modal-close" onclick="closeAllModals()"><i class="fa-solid fa-xmark"></i></button></div><div class="modal-body"><div class="delete-warning"><i class="fa-solid fa-circle-exclamation"></i> This is permanent and cannot be undone.</div><p style="color:var(--text-sub);font-size:.875rem;margin-bottom:14px">All your events, data, and certificates will be permanently deleted.</p><div class="settings-field"><label>Type <strong>DELETE<
