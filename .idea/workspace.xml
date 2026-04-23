@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="48c22ca1-b682-4cba-995c-bf46f1fd3986" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/smart-event-management/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/smart-event-management/backend/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-event-management/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/smart-event-management/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-event-management/backend/src/config/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-event-management/backend/src/config/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-event-management/backend/src/models/Attendance.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-event-management/backend/src/models/Attendance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-event-management/backend/src/models/Certificate.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-event-management/backend/src/models/Certificate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-event-management/backend/src/models/Event.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-event-management/backend/src/models/Event.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-event-management/backend/src/models/Feedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-event-management/backend/src/models/Feedback.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-event-management/backend/src/models/Message.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-event-management/backend/src/models/Message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-event-management/backend/src/models/Notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-event-management/backend/src/models/Notification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-event-management/backend/src/models/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-event-management/backend/src/models/Registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-event-management/backend/src/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-event-management/backend/src/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smart-event-management/backend/src/services/authService.js" beforeDir="false" afterPath="$PROJECT_DIR$/smart-event-management/backend/src/services/authService.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3BsG0vl699mOcwRg09kLQKRLsIx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.app.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.index.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.server.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/chaud/OneDrive/Desktop/Nuclear Launch Code/Moscow Launch Pad/Planora&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2026.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3bd3a6803838-JavaScript-WS-261.22158.274" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="48c22ca1-b682-4cba-995c-bf46f1fd3986" name="Changes" comment="" />
+      <created>1775270151353</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1775270151353</updated>
+      <workItem from="1775270155747" duration="2563000" />
+      <workItem from="1775307905767" duration="7495000" />
+      <workItem from="1775373145665" duration="6262000" />
+      <workItem from="1775384301863" duration="103000" />
+      <workItem from="1775454037437" duration="39000" />
+      <workItem from="1775495121965" duration="3927000" />
+      <workItem from="1775539967063" duration="2111000" />
+      <workItem from="1775582792518" duration="3389000" />
+      <workItem from="1775630496846" duration="1698000" />
+      <workItem from="1775645167401" duration="2771000" />
+      <workItem from="1775651144083" duration="221000" />
+      <workItem from="1775668862197" duration="3471000" />
+      <workItem from="1775714035127" duration="638000" />
+      <workItem from="1775724044906" duration="3028000" />
+      <workItem from="1775800522778" duration="765000" />
+      <workItem from="1775973328978" duration="19000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
