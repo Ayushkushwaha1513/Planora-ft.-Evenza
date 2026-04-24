@@ -28,7 +28,7 @@ function updateDateTime() {
 updateDateTime();
 setInterval(updateDateTime, 1000); // Updates every second
 
-// ==================== PARTICLE CANVAS ====================
+// ==ayushkushwaha================== PARTICLE CANVAS ====================
 (function() {
   const canvas = document.getElementById('particleCanvas');
   if (!canvas) return;

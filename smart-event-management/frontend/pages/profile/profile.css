@@ -1334,7 +1334,7 @@ body.light-mode .ai-badge { background: rgba(6,182,212,.06); }
 body.light-mode #particleCanvas { opacity: 0.15; }
 body.light-mode .cover-grid-overlay { opacity: 0.2; }
 
-/* ===== RESPONSIVE ===== */
+/* ayush kushwaha===== RESPONSIVE ===== */
 @media (max-width: 1150px) {
   .two-col { grid-template-columns: 1fr; }
   .stats-row { grid-template-columns: repeat(2,1fr); }
