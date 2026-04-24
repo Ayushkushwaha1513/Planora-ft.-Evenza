@@ -627,7 +627,7 @@ const cardObserver = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.1 });
-
+//this page made by Ayush kushwaha
 // Add CSS for card entrance
 const style = document.createElement('style');
 style.textContent = `
