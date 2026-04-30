@@ -16,7 +16,7 @@ function updateDateTime() {
       weekday: 'short', day: '2-digit', month: 'short', year: 'numeric'
     });
   }
-
+//made by ayush kushwaha
   // Time: "10:32:47 AM"
   const timeEl = document.getElementById('liveTime');
   if (timeEl) {
