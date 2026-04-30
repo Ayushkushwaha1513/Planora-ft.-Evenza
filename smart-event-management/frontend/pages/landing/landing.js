@@ -26,7 +26,7 @@
             phase: Math.random() * Math.PI * 2,
         };
     }
-
+/*kjbfdjd*/
     function initStars() {
         stars = Array.from({ length: STAR_COUNT }, createStar);
     }
